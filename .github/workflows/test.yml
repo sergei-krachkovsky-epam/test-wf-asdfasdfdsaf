@@ -1,0 +1,31 @@
+name: "test1"
+
+on: push
+  
+jobs:
+  jobs:
+    test1:
+      name: Test negative
+      steps:
+        - name: test1
+          run: |
+            for code in 0 1 0; do
+              [ $code -ne 0 ] && exit $code
+            done
+            echo "ok"
+        - name: test2
+          run: |
+            set +e
+            for code in 0 1 0; do
+              [ $code -ne 0 ] && exit $code
+            done
+            echo "ok"
+    test2:
+      name: Test positive
+      steps:
+        - name: test1
+          run: |
+            for code in 0 0 0; do
+              [ $code -ne 0 ] && exit $code
+            done
+            echo "ok"
