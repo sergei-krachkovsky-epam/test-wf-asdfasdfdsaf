@@ -4,7 +4,7 @@ on: push
   
 jobs:
   test1:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     name: Test negative
     steps:
       - name: test1
@@ -21,7 +21,7 @@ jobs:
           done
           echo "ok"
   test2:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     name: Test positive
     steps:
       - name: test1
